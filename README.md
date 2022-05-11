@@ -14,8 +14,11 @@ PHP SPX Installer
 #### To install PHP-SPX for a specific version:
 
 ```bash
+medunes@medunes:~/$ git clone git@github.com:MedUnes/php-spx-installer.git
+medunes@medunes:~/$ cd php-spx-installer
+
 # needs sudo!
-$ ./install.sh <version> <type>
+medunes@medunes:~/php-spx-installer$ sudo ./install.sh <version> <type>
 ```
 
 * ```<version>```: one of  5.6, 7.1, 7.2, 7.3, 7.4, 8.0 or 8.1"
@@ -24,6 +27,6 @@ $ ./install.sh <version> <type>
 #### Examples:
 
 ```bash
-$ sudo ./setup_spx 7.3 cli
-$ sudo ./setup_spx 7.4 fpm
+medunes@medunes:~/php-spx-installer$ sudo ./setup_spx 7.3 cli
+medunes@medunes:~/php-spx-installer$ sudo  ./setup_spx 7.4 fpm
 ```
