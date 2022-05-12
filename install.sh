@@ -56,7 +56,7 @@ apt install -y "php${PHP_VERSION}-dev"
 rm -rf ./php-spx
 
 ##########################################
-# Clone PHP-SPX, last version
+# Clone PHP-SPX, latest version
 ##########################################
 
 git clone https://github.com/NoiseByNorthwest/php-spx.git
