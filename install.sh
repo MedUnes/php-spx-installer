@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##############
-# diaply help
+# display help
 ##############
 
 function printUsage() {
