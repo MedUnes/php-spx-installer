@@ -30,3 +30,6 @@ medunes@medunes:~/php-spx-installer$ sudo ./install.sh <version> <type>
 medunes@medunes:~/php-spx-installer$ sudo ./setup_spx 7.3 cli
 medunes@medunes:~/php-spx-installer$ sudo  ./setup_spx 7.4 fpm
 ```
+#### TO-DO:
+
+* The current script only supports Linux Debian, would be nice to add support for further OS/Versions..
