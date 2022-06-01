@@ -29,6 +29,12 @@ if [ -z "$2" ]; then
   exit 1
 fi
 
+if [ $(id -u) -ne 0 ]; then
+  echo -e "It should run the installer with sudo, aborting!"
+  printUsage
+  exit 1
+fi;
+
 PHP_VERSION=$1
 PHP_TYPE=$2
 
