@@ -27,8 +27,8 @@ medunes@medunes:~/php-spx-installer$ sudo ./install.sh <version> <type>
 #### Examples:
 
 ```bash
-medunes@medunes:~/php-spx-installer$ sudo ./setup_spx 7.3 cli
-medunes@medunes:~/php-spx-installer$ sudo  ./setup_spx 7.4 fpm
+medunes@medunes:~/php-spx-installer$ sudo ./install.sh 7.3 cli
+medunes@medunes:~/php-spx-installer$ sudo  ./install.sh 7.4 fpm
 ```
 #### TO-DO:
 
