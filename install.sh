@@ -56,7 +56,7 @@ apt remove -y "php${PHP_VERSION}-dev"
 apt autoremove -y
 
 apt update
-apt install -y "php${PHP_VERSION}-dev zlib1g-dev"
+apt install -y make git "php${PHP_VERSION}-dev" "zlib1g-dev"
 
 rm -rf ./php-spx
 
