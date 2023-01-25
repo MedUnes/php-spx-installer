@@ -92,8 +92,11 @@ ls -al "${PHP_EXTENSION_DIR}/spx.so"
 # Create PHP-SPX extension INI file
 ########################################################
 touch "${PHP_INI_DIR}/conf.d/20-spx.ini"
-echo "extension=${PHP_EXTENSION_DIR}/spx.so" >"${PHP_INI_DIR}/conf.d/20-spx.ini"
-echo "process.dumpable = yes" >>"${PHP_INI_DIR}/php.ini"
+echo "extension=${PHP_EXTENSION_DIR}/spx.so" > "${PHP_INI_DIR}/conf.d/20-spx.ini"
+echo "process.dumpable = yes" >> "${PHP_INI_DIR}/php.ini"
+echo "spx.http_enabled=1" >> "$PHP_INI_DIR/conf.d/20-spx.ini"
+echo "spx.http_key="dev"" >> "$PHP_INI_DIR/conf.d/20-spx.ini"
+echo 'spx.http_ip_whitelist="*"' >> "$PHP_INI_DIR/conf.d/20-spx.ini"
 
 ########################################################
 # Eventually restart the FPM
