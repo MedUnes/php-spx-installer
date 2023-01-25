@@ -28,7 +28,7 @@ if [ -z "$2" ]; then
   printUsage
   exit 1
 fi
-if [ groups $(whoami) | grep -vq sudo ] && [ groups $(whoami) | grep -vq root ]; then
+if [ groups $(whoami) | grep -vq 'root\|sudo' ]; then
     echo -e "This script requires sudo permissions, aborting!"
     printUsage
     exit 1
