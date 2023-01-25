@@ -99,7 +99,9 @@ echo "process.dumpable = yes" >>"${PHP_INI_DIR}/php.ini"
 # Eventually restart the FPM
 ########################################################
 if [ $PHP_TYPE == "fpm" ]; then
-  systemctl restart php${PHP_VERSION}-fpm
+  if [ $(ps --no-headers -o comm 1) == "systemd" ]; then
+    systemctl restart php${PHP_VERSION}-fpm
+  fi
 fi
 
 ########################################################
@@ -107,6 +109,7 @@ fi
 ########################################################
 
 rm -rf ./php-spx
-echo -e "PHP SPX Profiler successfully installed for php$PHP_VERSION-$PHP_TYPE."
+echo -e "PHP SPX Profiler successfully installed for php$PHP_VERSION-$PHP_TYPE. Checking the extension from the loaded modules.."
+"php${PHP_VERSION}-${PHP_TYPE}" | grep SPX
 echo -e "Please refer to https://github.com/NoiseByNorthwest/php-spx for how to use it."
 
