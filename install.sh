@@ -28,11 +28,13 @@ if [ -z "$2" ]; then
   printUsage
   exit 1
 fi
-if [ groups $(whoami) | grep -vq 'root\|sudo' ]; then
+hasRoot=$( groups $(whoami) | grep  'root\|sudo')
+if [ -z "${hasRoot}" ]; then
     echo -e "This script requires sudo permissions, aborting!"
     printUsage
     exit 1
 fi
+
 
 PHP_VERSION=$1
 PHP_TYPE=$2
