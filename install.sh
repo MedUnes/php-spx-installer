@@ -109,7 +109,7 @@ fi
 ########################################################
 
 rm -rf ./php-spx
-echo -e "PHP SPX Profiler successfully installed for php$PHP_VERSION-$PHP_TYPE. Checking the extension from the loaded modules.."
-"php${PHP_VERSION}-${PHP_TYPE}" | grep SPX
+echo -e "PHP SPX Profiler successfully installed for php-${PHP_TYPE}${PHP_TYPE}. Checking the extension from the loaded modules.."
+"php-${PHP_TYPE}${PHP_TYPE}" | grep SPX
 echo -e "Please refer to https://github.com/NoiseByNorthwest/php-spx for how to use it."
 
