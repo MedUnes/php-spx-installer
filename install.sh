@@ -70,7 +70,7 @@ echo "PHP_VERSION=$PHP_VERSION"
 echo "PHP_TYPE=$PHP_TYPE"
 echo "PHP_INI_DIR=$PHP_INI_DIR"
 echo "PHP_BIN=$PHP_BIN"
-echo "PHP_EXTENSION_DIR=$PHP_INI_DIR"
+echo "PHP_EXTENSION_DIR=$PHP_EXTENSION_DIR"
 
 ##########################################
 # cleanup any [eventual] old setups
