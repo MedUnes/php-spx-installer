@@ -49,8 +49,14 @@ PHP_TYPE=$2
 ############################
 
 PHP_INI_DIR="/etc/php/${PHP_VERSION}/${PHP_TYPE}"
-PHP_BIN="php${PHP_VERSION}"
-php${PHP_VERSION}  -v || PHP_BIN="php"
+if ! command -v "php${PHP_VERSION}" &> /dev/null
+then
+    PHP_BIN="php"
+    echo "Command php${PHP_VERSION} could not be found, 'php' will be used instead without mentioning the version"
+else
+   PHP_BIN = "php${PHP_VERSION}"
+fi
+
 PHP_EXTENSION_DIR=$($PHP_BIN -i | grep extension_dir | cut -d " " -f 5)
 
 ######## BUILD ARGUMENTS###########
