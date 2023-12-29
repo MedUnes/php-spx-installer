@@ -1,0 +1,19 @@
+name: tests
+
+on: [ push, pull_request ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: [ 5.6, 7.1, 7.2, 7.4, 8.0, 8.1, 8.2 ]
+        type: [ cli, fpm ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Test PHP
+        run: ./install.sh ${{ matrix.php-version }} ${{ matrix.type }}
