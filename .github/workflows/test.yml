@@ -21,7 +21,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-versions: ${{ matrix.php-versions }}
+          php-version: ${{ matrix.php-versions }}
       # 3- Setup SPX
       - name: Setup PHP-SPX
         run: sudo ./install.sh ${{ matrix.php-versions }} ${{ matrix.type }}
