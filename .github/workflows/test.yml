@@ -21,8 +21,8 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-versions }}
+          php-versions: ${{ matrix.php-versions }}
           coverage: xdebug
       # 3- Setup xdebug
       - name: Setup PHP-SPX
-        run: sudo ./install.sh ${{ matrix.php-version }} ${{ matrix.type }}
+        run: sudo ./install.sh ${{ matrix.php-versions }} ${{ matrix.type }}
