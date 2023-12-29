@@ -51,13 +51,12 @@ PHP_TYPE=$2
 PHP_INI_DIR="/etc/php/${PHP_VERSION}/${PHP_TYPE}"
 ls -al $PHP_INI_DIR || (echo "can not locate PHP_INI_DIR at $PHP_INI_DIR. Aborting!" && exit 1)
 
-PHP_BIN="php${PHP_VERSION}"
-which php${PHP_VERSION} -v || (echo "can not locate $PHP_BIN. Defaulting to 'php'!" && PHP_BIN="php")
-
 php -i | grep extension_dir
-
 PHP_EXTENSION_DIR=$($PHP_BIN -i | grep extension_dir | cut -d " " -f 5)
 ls -al $PHP_EXTENSION_DIR || (echo "can not locate PHP_EXTENSION_DIR at $PHP_EXTENSION_DIR. Aborting!" && exit 1)
+
+PHP_BIN="php${PHP_VERSION}"
+which php${PHP_VERSION} -v || (echo "can not locate $PHP_BIN. Defaulting to 'php'!" && PHP_BIN="php")
 
 ######## BUILD ARGUMENTS###########
 #>>>> PHP_VERSION
