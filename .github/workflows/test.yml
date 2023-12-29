@@ -3,7 +3,7 @@ name: tests
 on: [ push, pull_request ]
 
 jobs:
-  ubuntu:
+  build:
     name: Ubuntu PHP ${{ matrix.php-versions }}) ${{ matrix.type }}
     runs-on: ubuntu-latest
     strategy:
