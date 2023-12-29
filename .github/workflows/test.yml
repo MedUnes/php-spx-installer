@@ -30,4 +30,4 @@ jobs:
           coverage: xdebug
       # 4- Setup xdebug
       - name: Setup PHP-SPX
-        run: ./install.sh ${{ matrix.php-version }} ${{ matrix.type }}
+        run: sudo ./install.sh ${{ matrix.php-version }} ${{ matrix.type }}
