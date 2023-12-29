@@ -35,7 +35,6 @@ if [ -z "${hasRoot}" ]; then
     exit 1
 fi
 
-
 PHP_VERSION=$1
 PHP_TYPE=$2
 
@@ -46,7 +45,8 @@ PHP_TYPE=$2
 PHP_INI_DIR="/etc/php/${PHP_VERSION}/${PHP_TYPE}"
 PHP_BIN="php${PHP_VERSION}"
 PHP_EXTENSION_DIR=$($PHP_BIN -i | grep extension_dir | cut -d " " -f 5)
-
+echo "PHP_EXTENSION_DIR=$PHP_EXTENSION_DIR\n"
+$PHP_EXTENSION_DIR || exit 1
 ##########################################
 # cleanup any [eventual] old setups
 ##########################################
