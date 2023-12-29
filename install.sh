@@ -45,8 +45,28 @@ PHP_TYPE=$2
 PHP_INI_DIR="/etc/php/${PHP_VERSION}/${PHP_TYPE}"
 PHP_BIN="php${PHP_VERSION}"
 PHP_EXTENSION_DIR=$($PHP_BIN -i | grep extension_dir | cut -d " " -f 5)
-echo "PHP_EXTENSION_DIR=$PHP_EXTENSION_DIR\n"
-$PHP_EXTENSION_DIR || exit 1
+set -o errexit
+set -o nounset
+set -o pipefail
+if [[ "${TRACE-0}" == "1" ]]; then
+    set -o xtrace
+fi
+
+######## BUILD ARGUMENTS###########
+#>>>> PHP_VERSION
+#>>>> PHP_TYPE
+#>>>> PHP_INI_DIR
+#>>>> PHP_BIN
+#>>>> PHP_EXTENSION_DIR
+###################################
+
+@echo "started building using:"
+@echo "PHP_VERSION=$PHP_VERSION"
+@echo "PHP_TYPE=$PHP_TYPE"
+@echo "PHP_INI_DIR=$PHP_INI_DIR"
+@echo "PHP_BIN=$PHP_INI_DIR"
+@echo "PHP_EXTENSION_DIR=$PHP_INI_DIR"
+
 ##########################################
 # cleanup any [eventual] old setups
 ##########################################
