@@ -51,8 +51,9 @@ PHP_TYPE=$2
 PHP_INI_DIR="/etc/php/${PHP_VERSION}/${PHP_TYPE}"
 ls -al $PHP_INI_DIR || (echo "can not locate PHP_INI_DIR at $PHP_INI_DIR. Aborting!" && exit 1)
 PHP_BIN="php${PHP_VERSION}"
-which php${PHP_VERSION} -v || (echo "can not locate $PHP_BIN. Aborting!" && exit 1)
-PHP_EXTENSION_DIR=$($PHP_BIN -i | grep extension_dir | cut -d " " -f 5)
+PHP_V="php${PHP_VERSION}"
+which php${PHP_VERSION} -v || (echo "can not locate $PHP_BIN. Defaulting to 'php'!" && PHP_BIN="php")
+PHP_EXTENSION_DIR=$php -i | grep extension_dir | cut -d " " -f 5)
 
 ######## BUILD ARGUMENTS###########
 #>>>> PHP_VERSION
@@ -76,11 +77,11 @@ echo "PHP_EXTENSION_DIR=$PHP_INI_DIR"
 rm -rf "${PHP_INI_DIR}/conf.d/20-spx.ini"
 rm -rf "${PHP_EXTENSION_DIR}/spx.so"
 
-apt remove -y "$PHP_BIN-dev"
+apt remove -y "php${PHP_VERSION}-dev"
 apt autoremove -y
 
 apt update
-apt install -y make git "$PHP_BIN-dev" "zlib1g-dev"
+apt install -y make git "php${PHP_VERSION}-dev" "zlib1g-dev"
 
 rm -rf ./php-spx
 
@@ -125,7 +126,7 @@ echo 'spx.http_ip_whitelist="*"' >> "$PHP_INI_DIR/conf.d/20-spx.ini"
 ########################################################
 if [ $PHP_TYPE == "fpm" ]; then
   if [ $(ps --no-headers -o comm 1) == "systemd" ]; then
-    systemctl restart $PHP_BIN-fpm
+    systemctl restart php${PHP_VERSION}-fpm
   fi
 fi
 
@@ -139,7 +140,7 @@ if [ ${PHP_TYPE} == "fpm" ]
 then
   "php-${PHP_TYPE}${PHP_VERSION}" -m | grep SPX
 else
-  "$PHP_BIN" -m | grep SPX
+  "php${PHP_VERSION}" -m | grep SPX
 fi
 
 echo -e "Please refer to https://github.com/NoiseByNorthwest/php-spx for how to use it."
