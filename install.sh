@@ -50,6 +50,7 @@ PHP_TYPE=$2
 
 PHP_INI_DIR="/etc/php/${PHP_VERSION}/${PHP_TYPE}"
 PHP_BIN="php${PHP_VERSION}"
+php${PHP_VERSION}  -v || PHP_BIN="php"
 PHP_EXTENSION_DIR=$($PHP_BIN -i | grep extension_dir | cut -d " " -f 5)
 
 ######## BUILD ARGUMENTS###########
