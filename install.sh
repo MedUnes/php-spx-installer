@@ -94,7 +94,7 @@ git checkout release/latest
 # Build PHP-SPX with the correct current PHP configs
 ########################################################
 
-make distclean
+#make distclean
 phpize${PHP_VERSION} –clean
 ./configure "--with-php-config=/usr/bin/php-config${PHP_VERSION}"
 make
