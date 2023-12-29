@@ -13,7 +13,7 @@ fi
 function printUsage() {
   echo -e "PHP-SPX profiler installer. needs sudo!"
   echo -e "usage sudo ./install.sh <version> <type>"
-  echo -e "\t <version>: one of  5.6, 7.1, 7.2, 7.3, 7.4, 8.0 or 8.1"
+  echo -e "\t <version>: one of  5.6, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1 or 8.2"
   echo -e "\t <type>: one of  fpm or cli"
   echo -e "Ex1: sudo ./setup_spx 7.3 cli"
   echo -e "Ex2: sudo ./setup_spx 7.4 fpm"
