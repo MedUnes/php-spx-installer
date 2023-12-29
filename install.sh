@@ -53,7 +53,7 @@ ls -al $PHP_INI_DIR || (echo "can not locate PHP_INI_DIR at $PHP_INI_DIR. Aborti
 PHP_BIN="php${PHP_VERSION}"
 PHP_V="php${PHP_VERSION}"
 which php${PHP_VERSION} -v || (echo "can not locate $PHP_BIN. Defaulting to 'php'!" && PHP_BIN="php")
-PHP_EXTENSION_DIR=$php -i | grep extension_dir | cut -d " " -f 5)
+PHP_EXTENSION_DIR=$($PHP_BIN -i | grep extension_dir | cut -d " " -f 5)
 
 ######## BUILD ARGUMENTS###########
 #>>>> PHP_VERSION
