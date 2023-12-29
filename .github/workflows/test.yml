@@ -22,6 +22,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
+          tools: phpize
       # 3- Setup SPX
       - name: Setup PHP-SPX
         run: sudo ./install.sh ${{ matrix.php-versions }} ${{ matrix.type }}
