@@ -6,6 +6,7 @@ PHP SPX Installer
 * An installer for [PHP SPX](https://github.com/NoiseByNorthwest/php-spx) profiler, that solves [hopefully] most of the encountered issues and works for all supported versions including cli and fpm</h3>
 * It also supports multiple PHP versions on the same machine
 
+[![Build Status](https://github.com/MedUnes/php-spx-installer/build/badge.svg?style=flat-square)](https://github.com/MedUnes/php-spx-installer/actions?query=workflow%3A%22build%22)
 [![Author](https://img.shields.io/badge/author-@medunes-blue.svg?style=flat-square)](https://twitter.com/medunes2)
 <br>
 
