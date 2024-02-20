@@ -15,7 +15,7 @@ PHP SPX Installer
 #### To install PHP-SPX for a specific version:
 
 ```bash
-medunes@medunes:~/$ git clone git@github.com:MedUnes/php-spx-installer.git
+medunes@medunes:~/$ git clone https://github.com/MedUnes/php-spx-installer.git
 medunes@medunes:~/$ cd php-spx-installer
 
 # needs sudo!
