@@ -22,7 +22,7 @@ medunes@medunes:~/$ cd php-spx-installer
 medunes@medunes:~/php-spx-installer$ sudo ./install.sh <version> <type>
 ```
 
-* ```<version>```: one of  5.6, 7.1, 7.2, 7.3, 7.4, 8.0 or 8.1
+* ```<version>```: one of  5.6, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1 or 8.2
 * ```<type>```: one of  ```fpm``` or ```cli```
 
 #### Examples:
