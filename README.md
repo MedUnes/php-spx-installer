@@ -10,7 +10,7 @@ PHP SPX Installer
 [![Author](https://img.shields.io/badge/author-@medunes-blue.svg?style=flat-square)](https://twitter.com/medunes2)
 <br>
 
-### How yo use it?
+### How you use it?
 
 #### To install PHP-SPX for a specific version:
 
